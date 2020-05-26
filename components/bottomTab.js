@@ -2,10 +2,10 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable react-native/no-inline-styles */
 import * as React from 'react';
-import {Button, Text, View} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { Button, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import HomeScreen from '../Screens/HomeScreen';
@@ -14,7 +14,9 @@ import Articles from '../Screens/Articles';
 import PostScreen from '../Screens/PostPage';
 import AddShipment from '../Screens/addShippment';
 import AddProduct from '../Screens/addProduct';
-
+import Categories from '../Screens/Categories';
+import Products from '../Screens/Products';
+import ProductDetails from '../Screens/ProductDetails';
 
 
 
@@ -49,43 +51,66 @@ function PostStackScreen() {
       <postStack.Screen name="addshipment" component={AddShipment} />
       <postStack.Screen name="addproduct" component={AddProduct} />
     </postStack.Navigator>
-  );}
+  );
+}
 
 const Tab = createBottomTabNavigator();
 
+
+const x = createStackNavigator();
+function ChooseCategory() {
+  return (
+    <x.Navigator>
+      <x.Screen name="Categories" component={Categories} />
+      <x.Screen name="Products" component={Products} />
+      <x.Screen name="ProductDetails" component={ProductDetails} />
+
+    </x.Navigator>
+  );
+}
+
+const y = createBottomTabNavigator();
+
+
+
+
+
+
 export default class MainApp extends React.Component {
-  render(){
+  render() {
     return (
-        <NavigationContainer>
-          <Tab.Navigator
-                  screenOptions={({ route }) => ({
-                    tabBarIcon: ({ focused, color, size }) => {
-                      let iconName;
+      <NavigationContainer>
+        <Tab.Navigator
+          screenOptions={({ route }) => ({
+            tabBarIcon: ({ focused, color, size }) => {
+              let iconName;
 
-                      if (route.name === 'Home') {
-                        iconName = focused
-                          ? 'ios-information-circle'
-                          : 'ios-information-circle-outline';
-                      } else if (route.name === 'Articles') {
-                        iconName = focused ? 'ios-list-box' : 'ios-list';
-                      }
+              if (route.name === 'Home') {
+                iconName = focused
+                  ? 'ios-information-circle'
+                  : 'ios-information-circle-outline';
+              } else if (route.name === 'Articles') {
+                iconName = focused ? 'ios-list-box' : 'ios-list';
+              }
 
-                      // You can return any component that you like here!
-                      return <Ionicons name={iconName} size={size} color={color} />;
-                    },
-                  })}
-                  tabBarOptions={{
-                    activeTintColor: 'tomato',
-                    inactiveTintColor: 'gray',
-                  }}
+              // You can return any component that you like here!
+              return <Ionicons name={iconName} size={size} color={color} />;
+            },
+          })}
+          tabBarOptions={{
+            activeTintColor: 'tomato',
+            inactiveTintColor: 'gray',
+          }}
 
 
-          >
-            <Tab.Screen name="Home" component={HomeScreen} />
-            <Tab.Screen name="Articles" component={Articles} />
-            <Tab.Screen name="PostPage" component={PostStackScreen} />
-          </Tab.Navigator>
-        </NavigationContainer>
-      );
+        >
+          <Tab.Screen name="Home" component={HomeScreen} />
+          <Tab.Screen name="Articles" component={Articles} />
+          <Tab.Screen name="Categories" component={ChooseCategory} />
+          <Tab.Screen name="PostPage" component={PostStackScreen} />
+
+        </Tab.Navigator>
+      </NavigationContainer>
+    );
   }
 }
