@@ -4,7 +4,7 @@
 /* eslint-disable prettier/prettier */
 import React , {Component} from 'react';
 import {View, Text,StyleSheet,TextInput,TouchableOpacity} from 'react-native';
-
+import CurvedView from '../components/curvedView';
 import Logo from '../components/Logo';
 import EmailAndPass from '../components/EmailAndPass';
 
@@ -27,10 +27,8 @@ class  SignUpScreen extends Component{
   
       return (
         <View style={styles.container}>
-            <View style={styles.logoContainer}>
-                <Logo />
-
-            </View>
+            
+            <CurvedView />
 
             <View style={styles.emailAndPass}>
 
@@ -51,7 +49,7 @@ class  SignUpScreen extends Component{
 
                     
 
-                        <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.navigate('Home')}>
+                        <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.navigate('MainApp')}>
                         <Text style={styles.button}>Sign Up</Text>
                          </TouchableOpacity>
                  
@@ -117,7 +115,7 @@ class  SignUpScreen extends Component{
         
     },
     buttonContainer:{
-        backgroundColor:'#383B98',
+        backgroundColor:'#ffbf00',
         padding:13,
         borderRadius:8,
         width:'50%',
