@@ -11,13 +11,13 @@ import EmailAndPass from '../components/EmailAndPass';
 
 
 // eslint-disable-next-line no-unused-vars
-class  LoginScreen extends Component{
+class  ForgetPass extends Component{
 
     state={
         
         email:'',
-        password:'',
-        error:'Login failed'
+        
+        error:'emial failed'
     }
   
     render(){
@@ -37,37 +37,17 @@ class  LoginScreen extends Component{
                     value={this.state.email}
                     onChangeText={email=>this.setState({email:email})}
                     />
-                    <TextInput 
-                    placeholder="password"
-                    style={styles.input} 
-                    value={this.state.password}
-                    onChangeText={pass=>this.setState({password:pass})}
-
-                    />
+                   
 
                    
                         <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigate('MainApp')}>
-                            <Text style={styles.button}>Login</Text>
+                            <Text style={styles.button}>Forget Password</Text>
                         </TouchableOpacity>
 
                        
                 
 
-                    <View style={styles.rowbuttons}>
-                        <TouchableOpacity style={styles.buttonContainer2} onPress={() => this.props.navigate('SignUpScreen')}>
-                            <Text style={styles.button}>Create Account</Text>
-                        </TouchableOpacity>
-                        
-
-                        <TouchableOpacity style={styles.buttonContainer2} onPress={() => this.props.navigate('ForgetPass')}>
-                            <Text style={styles.button}>Forget your Password ?</Text>
-                        </TouchableOpacity>
                     </View>
-
-                    <TouchableOpacity style={styles.buttonContainer3} onPress={() => this.props.navigate('SignUpScreen')}>
-                            <Text style={styles.button}>Sign up with Facebook</Text>
-                        </TouchableOpacity>
-                </View>
             </View>
         </View>
     );
@@ -135,37 +115,14 @@ const ratio   = sWidth / sHeight;
         backgroundColor:'#ffbf00',
         padding:13,
         borderRadius:18,
-        width:'50%',
+        width:'80%',
         alignSelf:'center',
         margin:20,
         padding:10,
         
     },
-    buttonContainer2:{
-        //backgroundColor:'#ffbf00',
-        
-       // borderRadius:8,
-        width:sWidth/1.8,
-        alignSelf:'center',
-        margin:20,
-        paddingRight:5,
-        borderLeftWidth:1
-        
-        
-    },
-    buttonContainer3:{
-        //backgroundColor:'#ffbf00',
-        
-       // borderRadius:8,
-        width:"90%",
-        alignSelf:'center',
-        padding:15,
-        borderColor:'black',
-        borderWidth:1,
-        borderRadius:12,
-        
-    }
+
 
   });
   
-  export default LoginScreen;
+  export default ForgetPass;
