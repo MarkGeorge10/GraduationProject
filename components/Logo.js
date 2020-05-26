@@ -6,13 +6,15 @@ import {View, Text,StyleSheet,Image} from 'react-native';
 
 
 
+
+
 // eslint-disable-next-line no-unused-vars
 const Logo =()=>{
     return (
         <View style={styles.container}>
             <Image
-            source={{uri:'https://uilogos.co/img/logotype/circle.png'}}
-             style={{height:200,width:200}} />
+            source={require('../img/logo.png')}
+             style={{height:80,width:80}} />
         </View>
     );
 };

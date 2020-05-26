@@ -10,7 +10,7 @@ import BG  from './img/background.jpg';
 
 
 import {createAppContainer} from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
+import { createStackNavigator, HeaderTitle } from 'react-navigation-stack';
 import HomeScreen from './Screens/HomeScreen';
 import DetailsPage from './Screens/DetailsPage';
 import LaunchScreen from './Screens/LaunchScreen';
@@ -23,8 +23,6 @@ import MainApp from './components/bottomTab';
 
 const AppNavigator = createStackNavigator(
   {
-    Home: HomeScreen,
-    Details: DetailsPage,
     LaunchScreen:LaunchScreen,
     SignUpScreen:SignUpScreen,
     MainApp:MainApp,
@@ -32,7 +30,11 @@ const AppNavigator = createStackNavigator(
   },
   {
     initialRouteName: 'LaunchScreen',
+    headerMode: "none"
   },
+
+
+  
   
 );
 // eslint-disable-next-line no-undef

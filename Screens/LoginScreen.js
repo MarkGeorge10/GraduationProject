@@ -1,10 +1,11 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/jsx-no-undef */
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable space-infix-ops */
 /* eslint-disable prettier/prettier */
 import React , {Component} from 'react';
-import {View, Text,StyleSheet,TextInput,TouchableOpacity} from 'react-native';
-
+import {View, Text,StyleSheet,TextInput,TouchableOpacity,Dimensions} from 'react-native';
+import CurvedView from '../components/curvedView';
 import Logo from '../components/Logo';
 import EmailAndPass from '../components/EmailAndPass';
 
@@ -23,10 +24,9 @@ class  LoginScreen extends Component{
   
       return (
         <View style={styles.container}>
-            <View style={styles.logoContainer}>
-                <Logo />
 
-            </View>
+            
+            <CurvedView />
 
             <View style={styles.emailAndPass}>
 
@@ -45,23 +45,28 @@ class  LoginScreen extends Component{
 
                     />
 
-                    <View style={styles.rowbuttons}>
+                   
                         <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigate('MainApp')}>
                             <Text style={styles.button}>Login</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigate('SignUpScreen')}>
-                        <Text style={styles.button}>Sign Up</Text>
-                    </TouchableOpacity>
+                       
+                
+
+                    <View style={styles.rowbuttons}>
+                        <TouchableOpacity style={styles.buttonContainer2} onPress={() => this.props.navigate('SignUpScreen')}>
+                            <Text style={styles.button}>Create Account</Text>
+                        </TouchableOpacity>
+                        
+
+                        <TouchableOpacity style={styles.buttonContainer2} onPress={() => this.props.navigate('')}>
+                            <Text style={styles.button}>Forget your Password ?</Text>
+                        </TouchableOpacity>
                     </View>
 
-                    
-
-                    <TouchableOpacity>
-                        <Text style={styles.errorText}>
-                            {this.state.error}
-                        </Text>
-                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.buttonContainer3} onPress={() => this.props.navigate('SignUpScreen')}>
+                            <Text style={styles.button}>Sign up with Facebook</Text>
+                        </TouchableOpacity>
                 </View>
             </View>
         </View>
@@ -69,8 +74,17 @@ class  LoginScreen extends Component{
   
     }
   };
+
+
+  const sWidth  = Dimensions.get('window').width;
+const sHeight = Dimensions.get('window').height;
+const ratio   = sWidth / sHeight;
   
   const styles = StyleSheet.create({
+
+
+
+
       container:{
           flex:1,
           justifyContent:'center',
@@ -78,7 +92,7 @@ class  LoginScreen extends Component{
          
       },
       containeremailAndPass:{
-        flex:1,
+        flex:3,
         padding:20
 
 
@@ -90,18 +104,14 @@ class  LoginScreen extends Component{
 
       },
 
-      logoContainer:{
-          flex:1,
-          justifyContent:'center',
-          alignItems:'center'
-      },
+     
       emailAndPass:{
           flex:2
       },
       input:{
         height:40,
         width:300,
-        backgroundColor:'rgba(255,255,255,.5)',
+        backgroundColor:'rgba(255,255,255,10)',
         paddingLeft:10,
         marginBottom:15,
         borderRadius:5,
@@ -116,19 +126,41 @@ class  LoginScreen extends Component{
     },
     button:{
         textAlign:'center',
-        color:'#fff',
+        //color:'#fff',
         fontWeight:'bold',
         fontSize:20,
         
     },
     buttonContainer:{
-        backgroundColor:'#383B98',
+        backgroundColor:'#ffbf00',
         padding:13,
-        borderRadius:8,
+        borderRadius:18,
         width:'50%',
         alignSelf:'center',
         margin:20,
         padding:10,
+        
+    },
+    buttonContainer2:{
+        //backgroundColor:'#ffbf00',
+        
+       // borderRadius:8,
+        width:sWidth/1.8,
+        alignSelf:'center',
+        margin:20,
+        
+        
+    },
+    buttonContainer3:{
+        //backgroundColor:'#ffbf00',
+        
+       // borderRadius:8,
+        width:"100%",
+        alignSelf:'center',
+        padding:20,
+        borderColor:'black',
+        borderWidth:1,
+        borderRadius:12,
         
     }
 

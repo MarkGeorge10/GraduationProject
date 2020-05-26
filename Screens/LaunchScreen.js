@@ -1,3 +1,4 @@
+/* eslint-disable no-trailing-spaces */
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-unused-vars */
 import React, {Component} from 'react';
@@ -23,9 +24,11 @@ class LaunchScreen extends Component {
     switch (this.state.loggedIn) {
       case true:
         return (
-          <ImageBackground style={styles.container} source={BG}>
+          
+
+          
             <LoginForm navigate={navigate}/>
-          </ImageBackground>
+         
         );
 
       case false:
