@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/jsx-no-undef */
 /* eslint-disable prettier/prettier */
 /* eslint-disable react-native/no-inline-styles */
@@ -11,26 +12,30 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import HomeScreen from '../Screens/HomeScreen';
 import DetailsScreen from '../Screens/DetailsPage';
 import Articles from '../Screens/Articles';
-import PostScreen from '../Screens/PostPage';
-import AddShipment from '../Screens/addShippment';
-import AddProduct from '../Screens/addProduct';
+import PostScreen from '../Screens/Posting/PostPage';
+import AddShipment from '../Screens/Posting/addShippment';
+import AddProduct from '../Screens/Posting/addProduct';
 import Categories from '../Screens/Categories';
 import Products from '../Screens/Products';
 import ProductDetails from '../Screens/ProductDetails';
+import MyOrders from '../Screens/MyOrders';
+
 
 
 
 
 const HomeStack = createStackNavigator();
 
-/*function HomeStackScreen() {
+function HomeStackScreen() {
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen name="Home" component={HomeScreen} />
-      <HomeStack.Screen name="Articles" component={Articles} />
+
     </HomeStack.Navigator>
   );
 }
+
+/*
 
 const SettingsStack = createStackNavigator();
 
@@ -69,9 +74,18 @@ function ChooseCategory() {
   );
 }
 
-const y = createBottomTabNavigator();
+
+const orderStack = createStackNavigator();
+
+function orders() {
+  return (
+    <orderStack.Navigator>
+      <orderStack.Screen name="MyOrders" component={MyOrders} />
 
 
+    </orderStack.Navigator>
+  );
+}
 
 
 
@@ -92,22 +106,27 @@ export default class MainApp extends React.Component {
               } else if (route.name === 'Articles') {
                 iconName = focused ? 'ios-list-box' : 'ios-list';
               }
+              else if (route.name === 'PostPage') {
+                iconName = focused ? 'add' : 'add';
+              }
 
               // You can return any component that you like here!
               return <Ionicons name={iconName} size={size} color={color} />;
             },
           })}
           tabBarOptions={{
-            activeTintColor: 'tomato',
+            activeTintColor: '#ffbf00',
             inactiveTintColor: 'gray',
           }}
 
 
         >
-          <Tab.Screen name="Home" component={HomeScreen} />
+          <Tab.Screen name="Home" component={HomeStackScreen} />
           <Tab.Screen name="Articles" component={Articles} />
           <Tab.Screen name="Categories" component={ChooseCategory} />
           <Tab.Screen name="PostPage" component={PostStackScreen} />
+          <Tab.Screen name="MyOrders" component={orders} />
+
 
         </Tab.Navigator>
       </NavigationContainer>
