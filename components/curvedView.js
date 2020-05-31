@@ -13,12 +13,7 @@ import EmailAndPass from '../components/EmailAndPass';
 // eslint-disable-next-line no-unused-vars
 class  CurvedView extends Component{
 
-    state={
-        
-        email:'',
-        password:'',
-        error:'Login failed'
-    }
+  
   
     render(){
   

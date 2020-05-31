@@ -4,9 +4,9 @@
 /* eslint-disable prettier/prettier */
 import React , {Component} from 'react';
 import {View, Text,StyleSheet,TextInput,TouchableOpacity} from 'react-native';
-import CurvedView from '../components/curvedView';
-import Logo from '../components/Logo';
-import EmailAndPass from '../components/EmailAndPass';
+import CurvedView from '../../components/curvedView';
+import Logo from '../../components/Logo';
+import EmailAndPass from '../../components/EmailAndPass';
 
 
 // eslint-disable-next-line no-unused-vars
