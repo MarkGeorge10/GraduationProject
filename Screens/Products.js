@@ -1,149 +1,70 @@
-import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Button, Dimensions, Image, ScrollView } from 'react-native';
-import { Card } from 'react-native-paper'
-class Products extends Component {
-    const = { width, height } = Dimensions.get("window");
-    render() {
+import React , {Component} from 'react';
+import {View, Text,StyleSheet,TouchableOpacity,Button} from 'react-native';
+import {Card} from 'react-native-paper'
+class  Products extends Component{
 
-        return (
+    render(){
 
-
-            <View style={styles.view}>
-                <ScrollView
-
-                >
-                    <Text>{height}</Text>
-                    <View style={styles.card} >
-                        <Card style={styles.card1}>
-                        <Image
-
-                            source={require('../img/bbb.jpg')}
-                            resizeMode='cover'
-                            style={{ width: 150, height: 150, margin: 5 }}
-                        />
-
-
-
-
-
-                        <Image
-
-                            source={require('../img/ccc.png')}
-                            resizeMode='cover'
-                            style={{ width: 150, height: 150, margin: 5 }}
-                        />
-
-
-                        <Image
-
-                            source={require('../img/ddd.jpg')}
-                            resizeMode='cover'
-                            style={{ width: 150, height: 150, margin: 5 }}
-                        />
-
-
-                        <Image
-
-                            source={require('../img/eee.jpg')}
-                            resizeMode='cover'
-                            style={{ width: 150, height: 150, margin: 5 }}
-                        />
-
-
-                        <Image
-
-                            source={require('../img/bbb.jpg')}
-                            resizeMode='cover'
-                            style={{ width: 150, height: 150, margin: 5 }}
-                        />
-                        </Card>
-                   
-
-                  
-                        <Card style={styles.card2}>
-                        <Image
-
-                            source={require('../img/bbb.jpg')}
-                            resizeMode='cover'
-                            style={{ width: 150, height: 150, margin: 5 }}
-                        />
-                        <Image
-
-                            source={require('../img/bbb.jpg')}
-                            resizeMode='cover'
-                            style={{ width: 150, height: 150, margin: 5 }}
-                        />
-                        <Image
-
-                            source={require('../img/bbb.jpg')}
-                            resizeMode='cover'
-                            style={{ width: 150, height: 150, margin: 5 }}
-                        />
-                        <Image
-
-                            source={require('../img/bbb.jpg')}
-                            resizeMode='cover'
-                            style={{ width: 150, height: 150, margin: 5 }}
-                        />
-                        <Image
-
-                            source={require('../img/bbb.jpg')}
-                            resizeMode='cover'
-                            style={{ width: 150, height: 150, margin: 5 }}
-                        />
-                      </Card>
-                   </View>
-
-                </ScrollView>
-          <View>
-                <Button
-                        title="Cart"
-                        onPress={() => this.props.navigation.navigate('Cart')}
+      return (
+        
+            <View style={styles.container}>
+                <View style={styles.articleContainer}>
+                    <Text style={styles.heading}>Welcome to Products Page</Text>
+                    <Button
+                        title=" Go to Products"
+                        onPress={() => this.props.navigation.navigate('ProductDetails')}
                          />
+                  
+    
+                    <TouchableOpacity style={{padding:20}}>
+                        <Text style={{color:'#189cfc'}}>Logout</Text>
+                    </TouchableOpacity>
+    
+                </View>
             </View>
-
-            </View>
-        );
+   
+    );
 
     }
-}
+  }
 
 
 
 const styles = StyleSheet.create({
-    view: {
-        flexDirection: 'row',
+    container:{
+        flex:1,
+        justifyContent:'center',
+        alignItems:'center'
 
-      
-        flex: 1
-
-    },
- 
-    card:{
-        flexDirection: 'row',
-        justifyContent:'space-evenly',
-    
-        width:"100%",
-        
 
     },
-    card2: {
-        alignItems: 'center',
-        backgroundColor:"blue",
-        margin: 4,
-        width:"50%",
-       
-       
+    heading:{
+        fontSize:22,
+        color:'black',
+        padding:10,
+        marginBottom:10,
     },
-    card1: {
-        alignItems: 'center',
-        backgroundColor:"red",
-        margin: 4,
-        width:"50%",
-       
-    }
-   
+    content:{
+        marginTop:10,
+        fontSize:19
+    },
+    articleContainer:{
+        padding:10,
+        borderBottomWidth: 5,
+        borderBottomColor:'rgba(255,255,255,.7)',
 
+    },
+    mycard:{
+
+margin:10,
+
+    },
+
+ cardview:{
+flexDirection:'row',
+
+
+ }   
 });
 
 export default Products;
