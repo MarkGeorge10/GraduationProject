@@ -1,25 +1,33 @@
 import React , {Component} from 'react';
-import {View, Text,StyleSheet,TouchableOpacity,Image,Button, } from 'react-native';
+import {View, Text,StyleSheet,TouchableOpacity,Image,Button,Dimensions } from 'react-native';
 
 
 export  class ProductDetails extends Component {
  
     constructor(props) {
       super(props)
-      this.state = { count: 0 }
+    
+      this.state = { count: 0,
+      };
+    
     }
+
+   
+  
   
   // const Content = (props) => {
     render() {
       // In the render method, we destructure the rangelow property from this.state and render it inside an h1
-      const { counter } = this.state
+     const { counter } = this.state
+     
       
     return (
-
-
+      
+      
       <View style={{flex:1,backgroundColor:'#1F456E',marginTop:40,borderTopRightRadius:25,borderTopLeftRadius:25}}>
      
         <View style={{flex:1}}>
+       
       <Text style={{fontSize:30,marginLeft:20,marginTop:10,color:'white'}}>200$</Text> 
       <Text style={{fontSize:20,marginLeft:20,marginTop:4,color:'white'}}>Colorful Textile</Text> 
       <Text style={{fontSize:15,marginLeft:20,marginTop:4,color:'white'}}>Thekdzfjksjdfksdjfksdfjksdfjsdkf
@@ -75,13 +83,24 @@ export  class ProductDetails extends Component {
                Add to Cart
              </Text>
           </TouchableOpacity>
-       </View>   
+          <View>
+                <Button
+                        title="Mycart"
+                        onPress={() => this.props.navigation.navigate('Cart')}
+                         />
+            </View>
+         
+       </View>  
        </View>
 
       
     )
   }}
   export default ProductDetails
+
+
+
+
    const plus=StyleSheet.create({
      view:{
   

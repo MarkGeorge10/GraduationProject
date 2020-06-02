@@ -18,9 +18,9 @@ import AddProduct from '../Screens/Posting/addProduct';
 import Categories from '../Screens/Categories';
 import Products from '../Screens/Products';
 import ProductDetails from '../Screens/ProductDetails';
+
+import Cart from '../Screens/Cart';
 import MyOrders from '../Screens/MyOrders';
-
-
 
 
 
@@ -69,6 +69,7 @@ function ChooseCategory() {
       <x.Screen name="Categories" component={Categories} />
       <x.Screen name="Products" component={Products} />
       <x.Screen name="ProductDetails" component={ProductDetails} />
+      <x.Screen name="Cart" component={Cart} />
 
     </x.Navigator>
   );
