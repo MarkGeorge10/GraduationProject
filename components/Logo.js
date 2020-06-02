@@ -14,14 +14,14 @@ const Logo =()=>{
         <View style={styles.container}>
             <Image
             source={require('../img/logo.png')}
-             style={{height:80,width:80}} />
+             style={{height:100,width:100}} />
         </View>
     );
 };
 
 const styles = StyleSheet.create({
     container:{
-        flex:1,
+        flex:2,
         justifyContent:'center',
         alignItems:'center',
 

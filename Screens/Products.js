@@ -24,13 +24,11 @@ class  Products extends Component{
             </View>
    
     );
-
-    }
   }
-
-
+}
 
 const styles = StyleSheet.create({
+
     container:{
         flex:1,
         justifyContent:'center',
@@ -56,7 +54,7 @@ const styles = StyleSheet.create({
     },
     mycard:{
 
-margin:10,
+      margin:10,
 
     },
 

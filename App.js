@@ -3,7 +3,7 @@
 import React , {Component} from 'react';
 import {View, Text,StyleSheet,ImageBackground} from 'react-native';
 
-import LoginForm from './Screens/LoginScreen';
+import LoginForm from './Screens/Authentication/LoginScreen';
 import Articles from './Screens/Articles';
 import BG  from './img/background.jpg';
 
@@ -11,11 +11,12 @@ import BG  from './img/background.jpg';
 
 import {createAppContainer} from 'react-navigation';
 import { createStackNavigator, HeaderTitle } from 'react-navigation-stack';
-import HomeScreen from './Screens/HomeScreen';
-import DetailsPage from './Screens/DetailsPage';
-import LaunchScreen from './Screens/LaunchScreen';
-import SignUpScreen from './Screens/SignUp';
-import ForgetPass from './Screens/forgetpass';
+
+import LaunchScreen from './Screens/Authentication/LaunchScreen';
+import SignUpScreen from './Screens/Authentication/SignUp';
+import ForgetPass from './Screens/Authentication/forgetpass';
+import GettingStarted from './Screens/Authentication/GettingStarted';
+
 
 // eslint-disable-next-line no-unused-vars
 import MainApp from './components/bottomTab';
@@ -25,6 +26,8 @@ import MainApp from './components/bottomTab';
 
 const AppNavigator = createStackNavigator(
   {
+
+    GettingStarted:GettingStarted,
     LaunchScreen:LaunchScreen,
     SignUpScreen:SignUpScreen,
     ForgetPass:ForgetPass,
@@ -32,7 +35,7 @@ const AppNavigator = createStackNavigator(
 
   },
   {
-    initialRouteName: 'LaunchScreen',
+    initialRouteName: 'GettingStarted',
     headerMode: 'none',
   },
 

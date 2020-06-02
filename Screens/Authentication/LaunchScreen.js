@@ -5,8 +5,7 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet, ImageBackground} from 'react-native';
 
 import LoginForm from './LoginScreen';
-import Articles from './Articles';
-import BG from '../img/background.jpg';
+import Articles from '../Articles';
 
 class LaunchScreen extends Component {
   state = {
