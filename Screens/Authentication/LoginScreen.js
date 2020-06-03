@@ -1,3 +1,4 @@
+/* eslint-disable no-dupe-keys */
 /* eslint-disable no-undef */
 /* eslint-disable react/jsx-no-undef */
 /* eslint-disable no-trailing-spaces */
