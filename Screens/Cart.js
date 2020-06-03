@@ -1,3 +1,4 @@
+/* eslint-disable no-trailing-spaces */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable no-dupe-keys */
 /* eslint-disable prettier/prettier */
@@ -12,6 +13,7 @@ import {
   Image,
   FlatList,
   SafeAreaView,
+  
 } from 'react-native';
 import {Card} from 'react-native-paper';
 import CardView from '../Screens/Cart_Card';
@@ -57,7 +59,7 @@ export default class Cart extends Component {
 
   render() {
     return (
-      <View style={{flex:1}}>
+      <ScrollView >
           <FlatList
           data={this.state.data}
           renderItem={({item}) => (
@@ -80,7 +82,7 @@ export default class Cart extends Component {
 
         
 
-      </View>
+      </ScrollView>
     );
   }
 }
