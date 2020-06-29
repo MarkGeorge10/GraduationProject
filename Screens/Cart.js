@@ -17,6 +17,7 @@ import {
 } from 'react-native';
 import {Card} from 'react-native-paper';
 import CardView from '../Screens/Cart_Card';
+import { calcRatio, calcWidth, calcHeight } from '../Dimension';
 export default class Cart extends Component {
   constructor(props) {
     super(props);
@@ -61,16 +62,26 @@ export default class Cart extends Component {
     return (
       <ScrollView >
           <FlatList
+          //pastlha prop data w bastly prop render iteem
           data={this.state.data}
+
+
+
+          //btgeb el item mn el flatlist w t3rdha 
+          //for each btkrr eldesign ally bb3to 
+          //callback b3ml call w btrg3ly 7aga fe elpramater
           renderItem={({item}) => (
+            //cardview component bs ana ally bnyah 
+            //text ,flatlis component by react
+            //props btpasslea 7aga aw ana ppaslha
             <CardView name={item.name} image={item.image} price={item.price} />
           )}
-          contentContainerStyle={{alignItems: 'center', paddingBottom: 100}}
+          contentContainerStyle={{alignItems: 'center', paddingBottom:calcHeight(100)}}
         />
 
         <View style={styles.rowItems}>
 
-            <Text style={{fontSize:20,margin:10}}>100,000$</Text>
+            <Text style={{fontSize:calcWidth(20),marginVertical:calcHeight(10),marginHorizontal:calcWidth(10)}}>Sub Total:100,000$</Text>
 
             <TouchableOpacity style={styles.button}>
               <Text>Pay Now</Text>
@@ -100,6 +111,7 @@ const styles = StyleSheet.create({
   rowItems:{
     flexDirection: 'row',
     justifyContent: 'space-evenly',
+    marginBottom:30
     
 
   },
@@ -109,7 +121,9 @@ const styles = StyleSheet.create({
     borderRadius:10,
     width:"25%",
     alignItems:'center',
-    margin:20,
-    padding:10,
+   // marginHorizontal:calcWidth(20),
+    //marginVertical:calcHeight(20),
+    //paddingHorizontal:calcWidth(10),
+    //paddingVertical:calcHeight(10),
   }
 });
