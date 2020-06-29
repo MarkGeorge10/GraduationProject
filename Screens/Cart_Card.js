@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Button, ScrollView, Image, FlatList, SafeAreaView } from 'react-native';
 import { Card } from 'react-native-paper';
-
+import { calcRatio, calcWidth, calcHeight } from '../Dimension';
 
 
 export default class CardView extends Component {
@@ -24,7 +24,7 @@ export default class CardView extends Component {
             <View style={styles.cart}>
 
                 <Image
-                    style={{ width: 70, height: 80, alignItems: 'center', justifyContent: 'center', alignSelf: 'center', marginLeft: 13, marginRight: 5 }}
+                    style={{ width: calcWidth(70), height: calcHeight (80), alignItems: 'center', justifyContent: 'center', alignSelf: 'center', marginLeft: calcHeight (13), marginRight:(5)  }}
 
                     source={this.props.image}
 
@@ -72,7 +72,7 @@ export default class CardView extends Component {
                 </View>
 
 
-                <View style={{ height: 80, width: 55, justifyContent: 'flex-end', alignItems: 'flex-end' }}>
+                <View style={{ height:calcHeight  (80), width:calcWidth(55)  , justifyContent: 'flex-end', alignItems: 'flex-end' }}>
                     <Text>{this.props.price}</Text>
 
                 </View>
@@ -127,8 +127,8 @@ const styles = StyleSheet.create({
 
 
     cart: {
-        width: 300,
-        height: 100,
+        width: calcWidth(300),
+        height: calcHeight (100),
         flexDirection: 'row',
         //alignContent: 'center',
 
@@ -137,11 +137,11 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
 
 
-        marginTop: 18,
+        marginTop: calcHeight (18),
         shadowColor: '#000',
         shadowOffset: {
-            width: 0,
-            height: 5,
+            width: calcWidth (0),
+            height:calcHeight (5) ,
         },
         shadowOpacity: 0.36,
         shadowRadius: 6.68,
@@ -160,27 +160,27 @@ const styles = StyleSheet.create({
     viewchild: {
 
         flexDirection: 'column',
-        height: 80,
-        width: 140,
+        height: calcHeight (80),
+        width: calcWidth (140),
         justifyContent:'flex-end',
         justifyContent: 'space-between',
 
     },
     text1: {
         alignItems: 'flex-start',
-        marginLeft: 5,
-        marginTop: 7,
+        marginLeft: calcWidth (5),
+        marginTop: calcHeight (7),
     },
     text2: {
         flexDirection: 'row',
-        marginLeft: 5,
+        marginLeft: calcWidth (5),
 
-        width: 85,
-        height: 30,
+        width: calcWidth (85),
+        height: calcHeight (30),
         backgroundColor: '#f5f0f0',
         borderStyle: 'solid',
-        paddingVertical: 8,
-        borderWidth: 0.4,
+        paddingVertical: calcHeight (8),
+        borderWidth: calcWidth(0.4),
         borderRadius: 8,
         borderColor: 'grey',
 
@@ -188,19 +188,19 @@ const styles = StyleSheet.create({
 
     },
     Minus: {
-        width: 28,
-        height: 20,
+        width: calcWidth(28),
+        height: calcHeight (20),
         justifyContent: 'flex-start',
 
 
-        marginLeft: 4,
+        marginLeft: calcWidth(4),
 
 
 
     },
     Add: {
-        width: 28,
-        height: 20,
+        width: calcWidth(28),
+        height: calcHeight(20),
         justifyContent: 'flex-end',
 
 
@@ -210,8 +210,8 @@ const styles = StyleSheet.create({
 
     },
     number: {
-        width: 28,
-        height: 20,
+        width: calcWidth(28),
+        height: calcHeight(20),
         justifyContent: 'center',
         alignItems: 'center',
 
@@ -222,13 +222,13 @@ const styles = StyleSheet.create({
 
     col: {
 
-        width: 50,
-        height: 70,
+        width:calcWidth(50),
+        height: calcHeight(70),
         alignItems: 'flex-end',
         alignSelf: 'center',
-        fontSize: 15,
-        marginLeft: 5,
-        marginBottom: 7,
+        fontSize: calcWidth(15),
+        marginLeft: calcWidth(5),
+        marginBottom: calcHeight(7),
 
         color: 'black',
         backgroundColor: 'white',
@@ -241,8 +241,8 @@ const styles = StyleSheet.create({
     },
 
     viewcounter: {
-        width: 100,
-        height: 30,
+        width: calcWidth(100),
+        height: calcHeight(30),
 
         //alignContent: 'center',
 
