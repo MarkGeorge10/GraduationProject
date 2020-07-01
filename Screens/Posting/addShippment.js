@@ -1,12 +1,13 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable prettier/prettier */
 import React, {Component} from 'react';
-import {ScrollView, View, TextInput, StyleSheet, Button} from 'react-native';
+import {Text, View, TextInput, StyleSheet, TouchableOpacity} from 'react-native';
 
 export default class AddShipment extends Component {
   render() {
     return (
       <View style={styles.viewContainer}>
+        
         <TextInput
           style={styles.textInputStyle}
           //value={this.state.placeName}
@@ -42,12 +43,9 @@ export default class AddShipment extends Component {
           placeholder="Password"
         />
 
-        <Button
-          primary
-          style={styles.placeButton}
-          title="Submit "
-          onPress={() => this.props.navigation.navigate('HomeScreen')}
-        />
+        <TouchableOpacity style={styles.buttonContainer} onPress={this.clickhandler}>
+            <Text style={{textAlign:'center',fontSize:20,color:'#fff'}}>Save changes</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -72,7 +70,7 @@ const styles = StyleSheet.create({
     //borderWidth:1,
     //borderColor:"black",
     borderBottomWidth: 1.0,
-    marginTop: 10.0,
+    margin: 10.0,
   },
 
   placeButton: {
@@ -80,6 +78,16 @@ const styles = StyleSheet.create({
 
     padding: 500,
   },
+  buttonContainer:{
+    backgroundColor:'#ffbf00',
+    padding:8,
+    borderRadius:25,
+    width:'40%',
+    alignSelf:'center',
+    margin:25,
+    
+    
+},
 });
 
 /*

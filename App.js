@@ -4,7 +4,6 @@ import React , {Component} from 'react';
 import {View, Text,StyleSheet,ImageBackground} from 'react-native';
 
 import LoginForm from './Screens/Authentication/LoginScreen';
-import Articles from './Screens/Articles';
 import BG  from './img/background.jpg';
 
 

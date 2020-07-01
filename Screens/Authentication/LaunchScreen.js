@@ -5,7 +5,7 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet, ImageBackground} from 'react-native';
 
 import LoginForm from './LoginScreen';
-import Articles from '../Articles';
+import Profile from '../Profile';
 
 class LaunchScreen extends Component {
   state = {
@@ -31,7 +31,7 @@ class LaunchScreen extends Component {
         );
 
       case false:
-        return <Articles />;
+        return <Profile />;
     }
   };
 
