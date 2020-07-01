@@ -328,7 +328,6 @@ const styles = StyleSheet.create({
   button:{
     textAlign:'center',
     color:'#fff',
-    fontWeight:'bold',
     fontSize:20,
 
 },
@@ -388,7 +387,7 @@ buttonContainer:{
     backgroundColor:'#ffbf00',
 
     borderRadius:18,
-    width:'50%',
+    width:'40%',
     alignSelf:'center',
     margin:20,
     padding:10,
