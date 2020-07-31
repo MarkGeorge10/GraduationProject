@@ -110,17 +110,17 @@ editadress: false,
 
                                 source={require('../img/aaa.jpg')}
 
+
                             />
 
 
                        <View style={{flexDirection:'column',alignSelf:'center',marginLeft:15}}>
                          <View >
-                            <Title style={{ fontSize: 22,color:'white' }}>Textile Company </Title>
-                            </View>
+
+                            <Title style={{ fontSize: 22,color:'white' }}>Egyptian Steel</Title>
 
                             <View>
-                                <Text style={{fontSize: 16,color:'white'}}> Nada Mohamed</Text>
-                                </View>
+                                <Text style={{fontSize: 16,color:'white'}}>Sally Salah</Text>
                                 </View>
                             </View>
 
@@ -134,9 +134,10 @@ editadress: false,
                                 placeholder="Company Name:"
                                 value={this.state.name}
                                 onChangeText={name => this.setname(name)}
-                                
-                                editable={this.state.editname}
 
+                                width="40%"
+                                editable={this.state.editname}
+                                multiline
 
 
                             />
@@ -158,8 +159,11 @@ editadress: false,
                                 placeholder="CompanyEmail"
                                 value={this.state.email}
                                 onChangeText={email => this.setemail(email)}
-                                
+
+                                width="40%"
                                 editable={this.state.editemail}
+                                multiline
+                                
 
 
 
@@ -180,8 +184,12 @@ editadress: false,
                                 placeholder="CompanyAdress"
                                 value={this.state.adress}
                                 onChangeText={adress => this.setadress(adress)}
-                               
+
+                                multiline
+                                
                                 editable={this.state.editadress}
+                              
+                                width="40%"
 
 
 
@@ -208,7 +216,8 @@ editadress: false,
                                 placeholder="CompanyPhone"
                                 value={this.state.phone}
                                 onChangeText={phone => this.setphone(phone)}
-                                
+
+                                width="40%"
                                 editable={this.state.editphone}
 
 

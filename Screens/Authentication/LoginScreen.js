@@ -52,19 +52,9 @@ class  LoginScreen extends Component{
                        
                 
 
-                    <View style={styles.rowbuttons}>
-                        <TouchableOpacity style={styles.buttonContainer2} onPress={() => this.props.navigate('SignUpScreen')}>
-                            <Text style={styles.button}>Create Account</Text>
-                        </TouchableOpacity>
-                        
-
-                        <TouchableOpacity style={styles.buttonContainer2} onPress={() => this.props.navigate('ForgetPass')}>
-                            <Text style={styles.button}>Forget your Password ?</Text>
-                        </TouchableOpacity>
-                    </View>
-
+                   
                     <TouchableOpacity style={styles.buttonContainer3} onPress={() => this.props.navigate('SignUpScreen')}>
-                            <Text style={styles.button}>Sign up with Facebook</Text>
+                            <Text style={styles.button}>Create Account</Text>
                         </TouchableOpacity>
                 </View>
             </View>
