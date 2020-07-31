@@ -4,7 +4,7 @@
 /* eslint-disable space-infix-ops */
 /* eslint-disable prettier/prettier */
 import React , {Component} from 'react';
-import {View, Text,StyleSheet,TouchableOpacity} from 'react-native';
+import {View, Text,StyleSheet,TouchableOpacity,Image} from 'react-native';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -18,12 +18,20 @@ class  PostScreen extends Component{
             <View style={styles.container}>
                 
                 <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.navigate('addshipment')}>
+                <Image
+                    style={{ width: 140, height: 140,  borderRadius: 140 / 2,alignSelf:'center',margin:10 }}
+                    source={require('../../img/shipping.png')}
+                    />
                   <Text style={styles.button}>Add Shipment</Text>
                 </TouchableOpacity>
 
                 <View style={styles.separator}></View>
 
                 <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.navigate('addproduct')}>
+                <Image
+                    style={{ width: 140, height: 140,  borderRadius: 140 / 2,alignSelf:'center',margin:10 }}
+                    source={require('../../img/addproduct.jpg')}
+                    />
                   <Text style={styles.button}>Add product</Text>
                 </TouchableOpacity>
                  
