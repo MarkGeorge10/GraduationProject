@@ -77,8 +77,11 @@ export default class AddProduct extends Component {
 
           </View>
 
+          <View style={styles.rowbuttons}>
 
-          <TextInput
+            <Text style={styles.text}>Description</Text>
+
+            <TextInput
             style={styles.largetextInputStyle}
             //value={this.state.placeName}
             // onChangeText={this.placeNameChangedHander},
@@ -86,6 +89,14 @@ export default class AddProduct extends Component {
 
             placeholder="Description"
           />
+
+
+
+
+          </View>
+
+
+          
 
 
 
@@ -129,7 +140,7 @@ export default class AddProduct extends Component {
               style={styles.textInputStyle}
               //value={this.state.placeName}
               // onChangeText={this.placeNameChangedHander}
-              placeholder="Brand Name"
+              placeholder="Place of Origin"
               />
 
 
@@ -145,8 +156,9 @@ export default class AddProduct extends Component {
                 style={{ height: 50, width: 150 }}
                 onValueChange={(itemValue, itemIndex) => this.setState({selectedCategoryValue : itemValue})}
               >
-                <Picker.Item label="Java" value="java" />
-                <Picker.Item label="JavaScript" value="js" />
+                <Picker.Item label="Agriculture" value="Agriculture" />
+                <Picker.Item label="Industry" value="Industry" />
+                <Picker.Item label="Electronic material" value="Electronic materials" />
               </Picker>
           </View>
 
@@ -376,7 +388,7 @@ buttonContainer:{
   },
 
   largetextInputStyle: {
-    width: '70%',
+    width: '60%',
 
     borderWidth: 1.0,
     margin: 10.0,
