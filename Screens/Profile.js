@@ -25,10 +25,10 @@ class Profile extends Component {
         editphone:false,
         blur: true,
         profiledata: {
-            name: 'Nada',
-            email: 'Nada@gmail',
-            phone:'1222222222222',
-            adress:'eeeeeeeee',
+            name: 'Egyptian Steel',
+            email: 'sally.salah@egyptian-steel.com',
+            phone:'02 27267004',
+            adress:'Land 221 – 2nd Sector – 5th Settlement, New Cairo, N Teseen, Cairo Governorate 11835',
         },
     }
 //el func el3adia msh btstna action bt7sl 3la tol
@@ -108,18 +108,18 @@ editadress: false,
                             <Image
                                 style={{ width: 140, height: 140,  borderRadius: 140 / 2,alignSelf:'center',margin:10 }}
 
-                                source={require('../img/aaa.jpg')}
+                                source={require('../img/steel.jpg')}
 
                             />
 
 
                        <View style={{flexDirection:'column',alignSelf:'center',marginLeft:15}}>
                          <View >
-                            <Title style={{ fontSize: 22,color:'white' }}>Textile Company </Title>
+                            <Title style={{ fontSize: 22,color:'white' }}>Egyptian Steel</Title>
                             </View>
 
                             <View>
-                                <Text style={{fontSize: 16,color:'white'}}> Nada Mohamed</Text>
+                                <Text style={{fontSize: 16,color:'white'}}>Sally Salah</Text>
                                 </View>
                                 </View>
                             </View>
@@ -134,9 +134,9 @@ editadress: false,
                                 placeholder="Company Name:"
                                 value={this.state.name}
                                 onChangeText={name => this.setname(name)}
-                                
+                                width="40%"
                                 editable={this.state.editname}
-
+                                multiline
 
 
                             />
@@ -158,8 +158,10 @@ editadress: false,
                                 placeholder="CompanyEmail"
                                 value={this.state.email}
                                 onChangeText={email => this.setemail(email)}
-                                
+                                width="40%"
                                 editable={this.state.editemail}
+                                multiline
+                                
 
 
 
@@ -180,8 +182,11 @@ editadress: false,
                                 placeholder="CompanyAdress"
                                 value={this.state.adress}
                                 onChangeText={adress => this.setadress(adress)}
-                               
+                                multiline
+                                
                                 editable={this.state.editadress}
+                              
+                                width="40%"
 
 
 
@@ -208,7 +213,7 @@ editadress: false,
                                 placeholder="CompanyPhone"
                                 value={this.state.phone}
                                 onChangeText={phone => this.setphone(phone)}
-                                
+                                width="40%"
                                 editable={this.state.editphone}
 
 

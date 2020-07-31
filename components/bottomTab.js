@@ -52,8 +52,8 @@ function PostStackScreen() {
   return (
     <postStack.Navigator>
       <postStack.Screen name="PostScreen" component={PostScreen} />
-      <postStack.Screen name="addshipment" component={AddShipment} />
-      <postStack.Screen name="addproduct" component={AddProduct} />
+      <postStack.Screen name="Add shipment" component={AddShipment} />
+      <postStack.Screen name="Add product" component={AddProduct} />
     </postStack.Navigator>
   );
 }
