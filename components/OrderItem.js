@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable no-unused-vars */
 /* eslint-disable space-infix-ops */
@@ -5,11 +6,28 @@
 import React , {Component} from 'react';
 import {View, Text,StyleSheet,TouchableOpacity} from 'react-native';
 import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
+import { calcRatio, calcWidth, calcHeight } from '../Dimension';
 
 
 class  OrderItem extends Component{
 
+  
+    num = this.props.orderNumber;
+  
+
     render(){
+
+        // eslint-disable-next-line no-undef
+
+        const date = this.props.orderDate;
+        
+
+    
+       
+   /* orderStatus:"shipping",
+    orderTotalPrice: 30000,
+    expectedTime:"A Months",
+    orderDate:"1/7/2020 12:30 PM"*/
 
       return (
         
@@ -22,52 +40,47 @@ class  OrderItem extends Component{
 
                     <View style={styles.CardContainer}>
                         <View style={styles.viewContainer}>
-                            <Title style={styles.CardTitle}>Today</Title>
-                            <Title style={styles.CardSubTitle}>6:30</Title>
+                            <Title style={styles.CardTitle}>{date.substring(0,8)}</Title>
+                            <Title style={styles.CardSubTitle}>{date.substring(9)}</Title>
 
                         </View>
 
                         <View style={styles.viewContainer}>
-                            <Title style={styles.CardTitle}><Text style={{color:'red'}}>Order NO#</Text></Title>
-                            <Title style={styles.CardSubTitle} >125</Title>
+                            <Title style={styles.CardTitle}><Text >Order NO#</Text></Title>
+                            <Title style={styles.CardSubTitle}>{this.props.orderNumber}</Title>
 
                         </View >
 
                         <Title style={styles.CardTitle}>
-                            <Text style={{color:'red'}}>Status : </Text>
-                            <Text style={{color:'green'}}>preparation</Text>
+                            <Text >Status : </Text>
+                            <Text style={{color:'green'}}>{this.props.orderStatus}</Text>
                         </Title>
                         
                     </View>
                     
 
 
-                    <View style={styles.contentContainer}>
-
-                        <Text> Order place</Text>
-                        <Text> 9:38 PM</Text>
-
-                    </View>
+                    
 
 
                     <View style={styles.contentContainer}>
 
                         <Text> Order Details</Text>
-                        <Text> bangar, seeds , ss,s,s,s,s,s,ss,s,s</Text>
+                        <Text></Text>
 
                     </View>
 
                     <View style={styles.contentContainer}>
 
                         <Text> Order Total</Text>
-                        <Text> 100,000 EG</Text>
+                        <Text>{`${this.props.orderTotalPrice}$`}</Text>
 
                     </View>
 
                     <View style={styles.contentContainer}>
 
                         <Text>Expected Delivery time</Text>
-                        <Text> a month</Text>
+                        <Text> {this.props.expectedTime}</Text>
 
                     </View>
 
@@ -77,7 +90,7 @@ class  OrderItem extends Component{
                 </Card.Content>
 
                 <Card.Actions>
-                    <Button>Cancelling Order </Button>
+                    <Button ><Text style={{color:"#ffbf00"}}>Cancelling Order</Text> </Button>
                    
                  </Card.Actions>
 
@@ -96,8 +109,8 @@ class  OrderItem extends Component{
 
 const styles = StyleSheet.create({
     container:{
-
-        margin:5,
+        margin:10
+        
     },
 
     viewContainer:{
@@ -122,7 +135,7 @@ const styles = StyleSheet.create({
     CardTitle:{
         fontSize:17,
         flex:1,
-        fontWeight:'bold'
+        //fontWeight:'bold'
     },
     CardSubTitle:{
         color:'grey',

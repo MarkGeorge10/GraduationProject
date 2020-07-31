@@ -3,7 +3,6 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable react-native/no-inline-styles */
 import * as React from 'react';
-import { Button, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -11,7 +10,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import HomeScreen from '../Screens/HomeScreen';
 import DetailsScreen from '../Screens/DetailsPage';
-import Articles from '../Screens/Articles';
+import Profile from '../Screens/Profile';
 import PostScreen from '../Screens/Posting/PostPage';
 import AddShipment from '../Screens/Posting/addShippment';
 import AddProduct from '../Screens/Posting/addProduct';
@@ -101,16 +100,20 @@ export default class MainApp extends React.Component {
               let iconName;
 
               if (route.name === 'Home') {
-                iconName = focused
-                  ? 'ios-information-circle'
-                  : 'ios-information-circle-outline';
-              } else if (route.name === 'Articles') {
-                iconName = focused ? 'ios-list-box' : 'ios-list';
+                iconName = 'ios-home';
+              } else if (route.name === 'Profile') {
+                iconName = 'md-person';
               }
               else if (route.name === 'PostPage') {
-                iconName = focused ? 'add' : 'add';
+                iconName = focused ? 'ios-add-circle' : 'ios-add-circle-outline';
               }
-
+              else if (route.name === 'Categories') {
+                iconName = 'md-apps';
+              }
+              else if (route.name === 'MyOrders') {
+                iconName = 'ios-clipboard';
+              }
+              
               // You can return any component that you like here!
               return <Ionicons name={iconName} size={size} color={color} />;
             },
@@ -123,7 +126,7 @@ export default class MainApp extends React.Component {
 
         >
           <Tab.Screen name="Home" component={HomeStackScreen} />
-          <Tab.Screen name="Articles" component={Articles} />
+          <Tab.Screen name="Profile" component={Profile} />
           <Tab.Screen name="Categories" component={ChooseCategory} />
           <Tab.Screen name="PostPage" component={PostStackScreen} />
           <Tab.Screen name="MyOrders" component={orders} />
