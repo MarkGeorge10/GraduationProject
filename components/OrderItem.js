@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable no-unused-vars */
 /* eslint-disable space-infix-ops */
@@ -144,3 +145,4 @@ const styles = StyleSheet.create({
 });
 
 export default OrderItem;
+
