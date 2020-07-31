@@ -16,25 +16,34 @@ class  PostScreen extends Component{
         return (
            
             <View style={styles.container}>
+
+             
                 
-                <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.navigate('addshipment')}>
-                <Image
-                    style={{ width: 140, height: 140,  borderRadius: 140 / 2,alignSelf:'center',margin:10 }}
-                    source={require('../../img/shipping.png')}
-                    />
+
+                <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.navigate('Add shipment')}>
+                  <Image
+                      style={{ width: 140, height: 140,  borderRadius: 140 / 2,alignSelf:'center',margin:10, }}
+                      source={require('../../img/shipping.png')} 
+                      />
                   <Text style={styles.button}>Add Shipment</Text>
                 </TouchableOpacity>
+          
+                
+               
 
                 <View style={styles.separator}></View>
 
-                <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.navigate('addproduct')}>
-                <Image
-                    style={{ width: 140, height: 140,  borderRadius: 140 / 2,alignSelf:'center',margin:10 }}
-                    source={require('../../img/addproduct.jpg')}
-                    />
-                  <Text style={styles.button}>Add product</Text>
-                </TouchableOpacity>
-                 
+
+               
+                
+                  <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.navigate('Add product')}>
+                    <Image
+                      style={{ width: 140, height: 140,  borderRadius: 140 / 2,alignSelf:'center',margin:10, }}
+                      source={require('../../img/products.jpg')} 
+                      />
+
+                    <Text style={styles.button}>Add product</Text>
+                  </TouchableOpacity>                 
 
                 
               </View>

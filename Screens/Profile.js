@@ -108,23 +108,24 @@ editadress: false,
                             <Image
                                 style={{ width: 140, height: 140,  borderRadius: 140 / 2,alignSelf:'center',margin:10 }}
 
-                                source={require('../img/aaa.jpg')}
+                                source={require('../img/steel.jpg')}
+
 
                             />
 
-
-                       <View style={{flexDirection:'column',alignSelf:'center',marginLeft:15}}>
-                         <View >
-                            <Title style={{ fontSize: 22,color:'white' }}>Egyptian Steel</Title>
-                            </View>
-
-                            <View>
-                                <Text style={{fontSize: 16,color:'white'}}>Sally Salah</Text>
+                            <View style={{flexDirection:'column',alignSelf:'center',marginLeft:15}}>
+                                <View >
+                                    <Title style={{ fontSize: 22,color:'white' }}>Egyptian Steel</Title>
+                                    <View>
+                                        <Text style={{fontSize: 16,color:'white'}}>Sally Salah</Text>
+                                    </View>
                                 </View>
-                                </View>
+
                             </View>
+                        </View>
 
 
+                       
 
 
                         <View style={styles.card}>
@@ -138,6 +139,8 @@ editadress: false,
                                 width="40%"
                                 editable={this.state.editname}
 
+
+                             
 
 
                             />
@@ -162,6 +165,8 @@ editadress: false,
                                 multiline
                                 width="40%"
                                 editable={this.state.editemail}
+                               
+                                
 
 
 
@@ -184,7 +189,9 @@ editadress: false,
                                 onChangeText={adress => this.setadress(adress)}
                                 multiline
                                 width="40%"
+
                                 editable={this.state.editadress}
+                              
 
 
 
@@ -227,16 +234,16 @@ editadress: false,
 
                         </View>
 
-                        <View style={{}}>
 
                         <TouchableOpacity style={styles.buttonContainer} onPress={this.clickhandler}>
                             <Text style={{textAlign:'center',fontSize:20,color:'#fff'}}>Save changes</Text>
                         </TouchableOpacity>
 
                            
-                        </View>
+                        
 
                     </View>
+                   
                 </ScrollView>
             </SafeAreaView>
         );
@@ -249,9 +256,6 @@ editadress: false,
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-
-        
-
 
     },
     card: {

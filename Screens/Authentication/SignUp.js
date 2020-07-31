@@ -5,17 +5,20 @@
 import React , {Component} from 'react';
 import {View, Text,StyleSheet,TextInput,TouchableOpacity} from 'react-native';
 import CurvedView from '../../components/curvedView';
-import Logo from '../../components/Logo';
-import EmailAndPass from '../../components/EmailAndPass';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
 
 
 // eslint-disable-next-line no-unused-vars
 class  SignUpScreen extends Component{
 
     state={
-        email:'',
+        companyName:'',
+        companyEmail:'',
+        companyAddress:'',
+        companyPhone:'',
         password:'',
-        error:'Login failed'
+        error:''
     }
 
     static navigationOption = {
@@ -23,29 +26,67 @@ class  SignUpScreen extends Component{
       };
   
     render(){
+       
         
-  
       return (
         <View style={styles.container}>
             
-            <CurvedView />
+            <CurvedView>
+            
 
+            </CurvedView>
+
+            
             <View style={styles.emailAndPass}>
 
                     <View style={styles.containeremailAndPass}>
-                    <TextInput 
-                    placeholder="email" 
-                    style={styles.input} 
-                    value={this.state.email}
-                    onChangeText={email=>this.setState({email:email})}
-                    />
-                    <TextInput 
-                    placeholder="password"
-                    style={styles.input} 
-                    value={this.state.password}
-                    onChangeText={pass=>this.setState({password:pass})}
 
-                    />
+
+                    <TextInput
+                                style={styles.input} 
+                                placeholder="Company Name:"
+                                value={this.state.companyName}
+                                onChangeText={companyName => this.setname(companyName)}
+                               
+                                multiline
+
+
+                            />
+
+                          
+
+
+                        
+                            <TextInput
+                             style={styles.input} 
+                                placeholder="Company Email"
+                                value={this.state.email}
+                                onChangeText={companyEmail => this.setemail(companyEmail)}
+                                
+                                
+                                
+                            />
+
+
+
+                            <TextInput
+                             style={styles.input} 
+                                placeholder="Company Address"
+                                value={this.state.companyAddress}
+                                onChangeText={companyAddress => this.setadress(companyAddress)}
+                                
+                                
+                              
+                                />
+
+
+
+                            <TextInput
+                             style={styles.input} 
+                                placeholder="Company Phone"
+                                value={this.state.companyPhone}
+                                onChangeText={companyPhone => this.setphone(companyPhone)}
+                                />
 
                     
 
@@ -54,7 +95,7 @@ class  SignUpScreen extends Component{
                          </TouchableOpacity>
                  
 
-                    
+                        
 
                     <TouchableOpacity>
                         <Text style={styles.errorText}>
@@ -93,12 +134,13 @@ class  SignUpScreen extends Component{
       },
       input:{
         height:40,
-        width:300,
+        
         backgroundColor:'rgba(255,255,255,.5)',
-        paddingLeft:10,
+        
         marginBottom:15,
         borderRadius:5,
-        fontSize:15
+        fontSize:15,
+        borderBottomWidth: 1.0,
     },
     errorText:{
         fontSize:25,
@@ -112,6 +154,7 @@ class  SignUpScreen extends Component{
         color:'#fff',
         fontWeight:'bold',
         fontSize:20,
+        color:'black'
         
     },
     buttonContainer:{
@@ -123,7 +166,28 @@ class  SignUpScreen extends Component{
         margin:20,
         padding:10,
         
-    }
+    },
+    buttonContainer3:{
+        //backgroundColor:'#ffbf00',
+        
+       // borderRadius:8,
+        width:"90%",
+        alignSelf:'center',
+        padding:15,
+        borderColor:'black',
+        borderWidth:1,
+        borderRadius:12,
+        
+    },
+    input:{
+        height:40,
+        width:300,
+        backgroundColor:'rgba(255,255,255,10)',
+        paddingLeft:10,
+        marginBottom:15,
+        borderRadius:5,
+        fontSize:15
+    },
 
   });
   

@@ -78,28 +78,18 @@ export default class AddProduct extends Component {
           </View>
 
           <View style={styles.rowbuttons}>
+              <Text style={styles.text}>Description</Text>
+              <TextInput
+                style={styles.largetextInputStyle}
+                //value={this.state.placeName}
+                // onChangeText={this.placeNameChangedHander},
+                numberOfLines={8}
 
-            <Text style={styles.text}>Description</Text>
-
-            <TextInput
-            style={styles.largetextInputStyle}
-            //value={this.state.placeName}
-            // onChangeText={this.placeNameChangedHander},
-            numberOfLines={8}
-
-            placeholder="Description"
-          />
-
-
-
-
+                placeholder="Description"
+              />
           </View>
 
-
-          
-
-
-
+          </View>
 
           <View style={styles.rowbuttons}>
 
@@ -158,7 +148,7 @@ export default class AddProduct extends Component {
               >
                 <Picker.Item label="Agriculture" value="Agriculture" />
                 <Picker.Item label="Industry" value="Industry" />
-                <Picker.Item label="Electronic material" value="Electronic materials" />
+                <Picker.Item label="Electronic Material" value="Electronic Material" />
               </Picker>
           </View>
 
@@ -311,7 +301,7 @@ export default class AddProduct extends Component {
          <TouchableOpacity style={styles.buttonContainer2}>
             <Text style={styles.button}>Add</Text>
         </TouchableOpacity>
-        </View>
+        
       </ScrollView>
     );
   }
