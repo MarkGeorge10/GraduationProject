@@ -1,15 +1,11 @@
-/* eslint-disable space-infix-ops */
-/* eslint-disable prettier/prettier */
-import React , {Component} from 'react';
-import {View, Text,StyleSheet,ImageBackground} from 'react-native';
-
-import LoginForm from './Screens/Authentication/LoginScreen';
-import BG  from './img/background.jpg';
-
-
-
+/* eslint-disable no-undef */
+import React from 'react';
+import {View, Text} from 'react-native';
 import {createAppContainer} from 'react-navigation';
-import { createStackNavigator, HeaderTitle } from 'react-navigation-stack';
+import {createStackNavigator} from 'react-navigation-stack';
+
+import HomeScreen from '../Screens/HomeScreen';
+import DetailsPage from '../Screens/DetailsPage';
 
 import LaunchScreen from './Screens/Authentication/LaunchScreen';
 import SignUpScreen from './Screens/Authentication/SignUp';
@@ -19,16 +15,10 @@ import ProductDetail from './Screens/ProductDetails';
 import categories from './Screens/Categories';
 import product from './Screens/Products';
 import Cart from './Screens/Cart';
-
-// eslint-disable-next-line no-unused-vars
-import MainApp from './components/bottomTab';
-
-
-// eslint-disable-next-line no-unused-vars
-
 const AppNavigator = createStackNavigator(
   {
-
+    Home: HomeScreen,
+    Details: DetailsPage,
     GettingStarted:GettingStarted,
     LaunchScreen:LaunchScreen,
     SignUpScreen:SignUpScreen,
@@ -40,30 +30,8 @@ const AppNavigator = createStackNavigator(
     Cart:Cart,
   },
   {
-    initialRouteName: 'GettingStarted',
-    headerMode: 'none',
+    initialRouteName: 'Home',
   },
-
-
-
-
 );
-// eslint-disable-next-line no-undef
-const AppContainer = createAppContainer(AppNavigator);
 
-class  App extends Component{
-
-
-
-  render(){
-
-    return (
-      <AppContainer />
-  );
-
-  }
-}
-
-
-
-export default App;
+export default AppNavigator;

@@ -20,9 +20,6 @@ import ProductDetails from '../Screens/ProductDetails';
 
 import Cart from '../Screens/Cart';
 import MyOrders from '../Screens/MyOrders';
-
-
-
 const HomeStack = createStackNavigator();
 
 function HomeStackScreen() {
@@ -35,6 +32,18 @@ function HomeStackScreen() {
 }
 
 /*
+const HomeStack = createStackNavigator();
+
+function HomeStackScreen() {
+  return (
+    <HomeStack.Navigator>
+      <HomeStack.Screen name="Home" component={HomeScreen} />
+
+    </HomeStack.Navigator>
+  );
+}
+
+
 
 const SettingsStack = createStackNavigator();
 
