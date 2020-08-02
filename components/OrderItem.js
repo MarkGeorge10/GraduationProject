@@ -5,7 +5,7 @@
 /* eslint-disable prettier/prettier */
 import React , {Component} from 'react';
 import {View, Text,StyleSheet,TouchableOpacity} from 'react-native';
-import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
+import { Avatar, Button, Card, Title, Paragraph, List } from 'react-native-paper';
 import { calcRatio, calcWidth, calcHeight } from '../Dimension';
 
 
@@ -13,7 +13,7 @@ class  OrderItem extends Component{
 
   
     num = this.props.orderNumber;
-  
+    
 
     render(){
 
@@ -21,13 +21,9 @@ class  OrderItem extends Component{
 
         const date = this.props.orderDate;
         
-
+        
+        
     
-       
-   /* orderStatus:"shipping",
-    orderTotalPrice: 30000,
-    expectedTime:"A Months",
-    orderDate:"1/7/2020 12:30 PM"*/
 
       return (
         
@@ -53,26 +49,28 @@ class  OrderItem extends Component{
 
                         <Title style={styles.CardTitle}>
                             <Text >Status : </Text>
-                            <Text style={{color:'green'}}>{this.props.orderStatus}</Text>
+                            <Text style={{color:'green'}}>{ this.props.orderStatus}</Text>
                         </Title>
                         
                     </View>
-                    
-
-
-                    
-
+        
 
                     <View style={styles.contentContainer}>
 
-                        <Text> Order Details</Text>
-                        <Text></Text>
+                        <Text>Order Details</Text>
+                        <Text>{this.props.products}</Text>
+
+                    </View>
+                    <View style={styles.contentContainer}>
+
+                        <Text>Quantity</Text>
+                        <Text>{`${this.props.qty}`}</Text>
 
                     </View>
 
                     <View style={styles.contentContainer}>
 
-                        <Text> Order Total</Text>
+                        <Text>Order Total</Text>
                         <Text>{`${this.props.orderTotalPrice}$`}</Text>
 
                     </View>
@@ -90,7 +88,7 @@ class  OrderItem extends Component{
                 </Card.Content>
 
                 <Card.Actions>
-                    <Button ><Text style={{color:"#ffbf00"}}>Cancelling Order</Text> </Button>
+                    <Button ><Text style={{color:"#ffbf00"}}>Cancel Order</Text> </Button>
                    
                  </Card.Actions>
 

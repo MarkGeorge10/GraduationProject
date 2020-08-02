@@ -3,7 +3,7 @@
 /* eslint-disable space-infix-ops */
 /* eslint-disable prettier/prettier */
 import React , {Component} from 'react';
-import {View, Text,StyleSheet,TextInput,TouchableOpacity} from 'react-native';
+import {View,ScrollView, Text,StyleSheet,TextInput,TouchableOpacity,ActivityIndicator,Button} from 'react-native';
 import CurvedView from '../../components/curvedView';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -12,22 +12,77 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 // eslint-disable-next-line no-unused-vars
 class  SignUpScreen extends Component{
 
-    state={
+    
+    constructor(props) {
+        super(props);
+        this.state = {
         companyName:'',
         companyEmail:'',
         companyAddress:'',
         companyPhone:'',
         password:'',
-        error:''
+        confirmPassword:'',
+        error:null,
+        isLoaded:false
+        };
+       
     }
 
-    static navigationOption = {
-        header: null,
-      };
-  
-    render(){
-       
-        
+    Submit = () => {
+           
+                   // if (this.state.newPassword === this.state.rePassword){
+                        var url = "https://mosaic-test-api.herokuapp.com/users/signin";
+                       
+                        
+                      fetch(url,
+                        {
+                            method: 'POST',
+                            
+                            body: JSON.stringify({ 
+                                "fullname": "Mark",
+                                "email": "marssk@gmail.com",
+                                "Address": "a",
+                                //"phone":companyPhone,
+                                "Password": "123",
+                                "verifypassword": "123" }),
+                            } ).then((response)  =>
+                            {
+                                if (response.status === 200){
+
+                                    Alert.alert(
+                                        'Alert',
+                                        'created user successfully',
+                                        [
+                                          {text: 'OK', onPress: () =>  this.props.navigate('MainApp'),
+                                        },
+                                        ],
+                                      );
+                                     }
+                                else {
+                                    if (response.status === 500)
+                                {
+                                    alert('Error while resetting the password');
+
+                                }
+                                }
+                            }
+                                ).catch((error) => {
+                                    console.log(error);
+                                    alert('Please check your internet connection and try again.');
+                                        //  this.setState({loading: false});
+                                });
+                   // }
+
+                   /* else {
+                        alert('Passwords do not match');
+                    }*/
+                }
+               
+
+ 
+     
+   
+    render(){        
       return (
         <View style={styles.container}>
             
@@ -37,20 +92,17 @@ class  SignUpScreen extends Component{
             </CurvedView>
 
             
-            <View style={styles.emailAndPass}>
+            <ScrollView style={styles.emailAndPass}>
 
                     <View style={styles.containeremailAndPass}>
 
 
                     <TextInput
                                 style={styles.input} 
-                                placeholder="Company Name:"
+                                placeholder="Company Name"
                                 value={this.state.companyName}
-                                onChangeText={companyName => this.setname(companyName)}
-                               
+                                onChangeText={companyName => this.setState({companyName})}
                                 multiline
-
-
                             />
 
                           
@@ -60,11 +112,8 @@ class  SignUpScreen extends Component{
                             <TextInput
                              style={styles.input} 
                                 placeholder="Company Email"
-                                value={this.state.email}
-                                onChangeText={companyEmail => this.setemail(companyEmail)}
-                                
-                                
-                                
+                                value={this.state.companyEmail}
+                                onChangeText={companyEmail => this.setState({companyEmail})} 
                             />
 
 
@@ -73,10 +122,7 @@ class  SignUpScreen extends Component{
                              style={styles.input} 
                                 placeholder="Company Address"
                                 value={this.state.companyAddress}
-                                onChangeText={companyAddress => this.setadress(companyAddress)}
-                                
-                                
-                              
+                                onChangeText={companyAddress => this.setState({companyAddress})}
                                 />
 
 
@@ -84,15 +130,37 @@ class  SignUpScreen extends Component{
                             <TextInput
                              style={styles.input} 
                                 placeholder="Company Phone"
+                                keyboardType="numeric"
+                                
                                 value={this.state.companyPhone}
-                                onChangeText={companyPhone => this.setphone(companyPhone)}
+                                onChangeText={companyPhone=>this.setState({companyPhone})}
+                                />
+
+                            <TextInput
+                             style={styles.input} 
+                                placeholder="Company Password"
+                                value={this.state.password}
+                                secureTextEntry
+                                onChangeText={password=>this.setState({password})}
+                                />
+                                <TextInput
+                                    style={styles.input} 
+                                    placeholder="Confirm Password"
+                                    value={this.state.confirmPassword}
+                                    secureTextEntry
+                                    onChangeText={confirmPassword=>{
+                                        this.setState({confirmPassword})
+                                            
+                                            
+                                        } 
+                                        
+                                    }
                                 />
 
                     
-
-                        <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.navigate('MainApp')}>
-                        <Text style={styles.button}>Sign Up</Text>
-                         </TouchableOpacity>
+                    <Button title="Submit" style={styles.buttonContainer}
+                    onPress={()=>this.Submit}/>
+                       
                  
 
                         
@@ -103,7 +171,7 @@ class  SignUpScreen extends Component{
                         </Text>
                     </TouchableOpacity>
                 </View>
-            </View>
+            </ScrollView>
         </View>
     );
   
@@ -152,9 +220,10 @@ class  SignUpScreen extends Component{
     button:{
         textAlign:'center',
         color:'#fff',
-        fontWeight:'bold',
+        //fontWeight:'bold',
         fontSize:20,
-        color:'black'
+        color:'black',
+        fontFamily:"arial"
         
     },
     buttonContainer:{

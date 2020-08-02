@@ -14,37 +14,17 @@ class  MyOrders extends Component{
     data: [
       {
         orderNumber:125,
-        orderStatus:"Preparation",
-        orderTotalPrice: 250500,
+        orderStatus:"Preparing",
+        orderTotalPrice: 500000,
         expectedTime:"Two Months",
         orderDate:"2/6/2020 11:30 PM",
-        products:[
-          {
-            productName:"p1"
-          },
-          
-          {
-            productName:"p2"
-          },
-          
-          {
-            productName:"p3"
-          },
-          
-          {
-            productName:"p4"
-          }
-        ]
+        products:"Pig Iron",
+        quantity:10000
+        
+        
       },
 
-      {
-        orderNumber:25,
-        orderStatus:"shipping",
-        orderTotalPrice: 30000,
-        expectedTime:"A Months",
-        orderDate:"1/7/2020 12:30 PM",
-      },
-     
+      
     ],
   };
   
@@ -73,7 +53,9 @@ class  MyOrders extends Component{
                        orderStatus={item.orderStatus}
                        orderTotalPrice={item.orderTotalPrice} 
                        expectedTime={item.expectedTime}
-                       orderDate ={item.orderDate}/>
+                       orderDate ={item.orderDate}
+                       products ={item.products}
+                       qty ={item.quantity}/>
           )}
           contentContainerStyle={{margin:10,paddingBottom:20,}}
         />

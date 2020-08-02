@@ -93,7 +93,7 @@ export default class AddProduct extends Component {
 
           <View style={styles.rowbuttons}>
 
-              <Text style={styles.text}>Model Numbers</Text>
+              <Text style={styles.text}>Model Number</Text>
 
               <TextInput
               style={styles.textInputStyle}

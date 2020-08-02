@@ -51,7 +51,7 @@ const postStack = createStackNavigator();
 function PostStackScreen() {
   return (
     <postStack.Navigator>
-      <postStack.Screen name="PostScreen" component={PostScreen} />
+      <postStack.Screen name="Post product" component={PostScreen} />
       <postStack.Screen name="Add shipment" component={AddShipment} />
       <postStack.Screen name="Add product" component={AddProduct} />
     </postStack.Navigator>
@@ -104,7 +104,7 @@ export default class MainApp extends React.Component {
               } else if (route.name === 'Profile') {
                 iconName = 'md-person';
               }
-              else if (route.name === 'PostPage') {
+              else if (route.name === 'Post product') {
                 iconName = focused ? 'ios-add-circle' : 'ios-add-circle-outline';
               }
               else if (route.name === 'Categories') {
@@ -128,7 +128,7 @@ export default class MainApp extends React.Component {
           <Tab.Screen name="Home" component={HomeStackScreen} />
           <Tab.Screen name="Profile" component={Profile} />
           <Tab.Screen name="Categories" component={ChooseCategory} />
-          <Tab.Screen name="PostPage" component={PostStackScreen} />
+          <Tab.Screen name="Post product" component={PostStackScreen} />
           <Tab.Screen name="MyOrders" component={orders} />
 
 

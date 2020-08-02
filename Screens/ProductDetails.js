@@ -37,7 +37,7 @@ export  class ProductDetails extends Component {
         <View style={{flex:1,marginTop:40,backgroundColor:'#1F456E',borderTopRightRadius:30,borderTopLeftRadius:30}}>
         <View style={{flex:2}}>
         <View style={{flexDirection:'row',justifyContent:'space-between'}}>
-        <Text style={{fontSize:30,marginLeft:20,marginTop:10,color:'white'}}>200$</Text>
+        <Text style={{fontSize:30,marginLeft:20,marginTop:10,color:'white'}}>200$ /ton</Text>
 
         <View style={{flexDirection:'row',marginRight:20,marginTop:14}}>
           <TouchableOpacity onPress ={ () => {

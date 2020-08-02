@@ -36,12 +36,7 @@ export default class AddShipment extends Component {
           placeholder="Shipment Company Address"
         />
 
-        <TextInput
-          style={styles.textInputStyle}
-          //value={this.state.placeName}
-          // onChangeText={this.placeNameChangedHander}
-          placeholder="Password"
-        />
+       
 
         <TouchableOpacity style={styles.buttonContainer} onPress={this.clickhandler}>
             <Text style={{textAlign:'center',fontSize:20,color:'#fff'}}>Save changes</Text>

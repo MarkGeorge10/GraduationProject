@@ -5,7 +5,7 @@
 /* eslint-disable space-infix-ops */
 /* eslint-disable prettier/prettier */
 import React , {Component} from 'react';
-import {View, Text,StyleSheet,TextInput,TouchableOpacity,Dimensions} from 'react-native';
+import {View, ScrollView,Text,StyleSheet,TextInput,TouchableOpacity,Dimensions} from 'react-native';
 import CurvedView from '../../components/curvedView';
 
 
@@ -16,7 +16,18 @@ class  LoginScreen extends Component{
         
         email:'',
         password:'',
-        error:'Login failed'
+        error:null
+    }
+    login= async()=>{
+        const {email,password} = this.state;
+        await fetch("​https://mosaic-test-api.herokuapp.com/users​/login",{
+            method:"POST",
+            credentials:{
+                "email":email,
+                "password":password
+            }
+        }).then(res=>this.props.navigate('MainApp')).catch(error => this.setState({error:error.message}));
+
     }
   
     render(){
@@ -27,7 +38,7 @@ class  LoginScreen extends Component{
             
             <CurvedView />
 
-            <View style={styles.emailAndPass}>
+            <ScrollView style={styles.emailAndPass}>
 
                     <View style={styles.containeremailAndPass}>
                     <TextInput 
@@ -41,11 +52,15 @@ class  LoginScreen extends Component{
                     style={styles.input} 
                     value={this.state.password}
                     onChangeText={pass=>this.setState({password:pass})}
-
+                    secureTextEntry
                     />
 
+                    <View style={styles.errorMessage}>
+                        {this.state.error && <Text style={styles.errorText}>{this.state.error}</Text>}
+                     </View>
+
                    
-                        <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigate('MainApp')}>
+                        <TouchableOpacity style={styles.buttonContainer} onPress={()=>/**/this.login}>
                             <Text style={styles.button}>Login</Text>
                         </TouchableOpacity>
 
@@ -57,7 +72,7 @@ class  LoginScreen extends Component{
                             <Text style={styles.button}>Create Account</Text>
                         </TouchableOpacity>
                 </View>
-            </View>
+            </ScrollView>
         </View>
     );
   
@@ -71,7 +86,14 @@ const ratio   = sWidth / sHeight;
   
   const styles = StyleSheet.create({
 
+    errorMessage:{
 
+        height:40,
+        alignItems:'center',
+        justifyContent:"center",
+        marginHorizontal:30
+
+    },
 
 
       container:{
