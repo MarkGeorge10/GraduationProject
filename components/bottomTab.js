@@ -6,7 +6,8 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+//import Ionicons from 'react-native-vector-icons/Ionicons';
+import { Ionicons } from '@expo/vector-icons';
 
 import HomeScreen from '../Screens/HomeScreen';
 import DetailsScreen from '../Screens/DetailsPage';
@@ -20,28 +21,21 @@ import ProductDetails from '../Screens/ProductDetails';
 
 import Cart from '../Screens/Cart';
 import MyOrders from '../Screens/MyOrders';
+
 const HomeStack = createStackNavigator();
 
 function HomeStackScreen() {
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen name="Home" component={HomeScreen} />
-
+      <HomeStack.Screen name="Products" component={Products} />
+      <HomeStack.Screen name="ProductDetails" component={ProductDetails} />
+      <HomeStack.Screen name="Cart" component={Cart} />
     </HomeStack.Navigator>
   );
 }
 
 /*
-const HomeStack = createStackNavigator();
-
-function HomeStackScreen() {
-  return (
-    <HomeStack.Navigator>
-      <HomeStack.Screen name="Home" component={HomeScreen} />
-
-    </HomeStack.Navigator>
-  );
-}
 
 
 
@@ -74,9 +68,11 @@ const x = createStackNavigator();
 function ChooseCategory() {
   return (
     <x.Navigator>
+
       <x.Screen name="Categories" component={Categories} />
       <x.Screen name="Products" component={Products} />
       <x.Screen name="ProductDetails" component={ProductDetails} />
+
       <x.Screen name="Cart" component={Cart} />
 
     </x.Navigator>
@@ -100,14 +96,16 @@ function orders() {
 
 
 export default class MainApp extends React.Component {
+  disableYellowBox = true;
+
   render() {
+    
     return (
-      <NavigationContainer>
+      <NavigationContainer >
         <Tab.Navigator
           screenOptions={({ route }) => ({
             tabBarIcon: ({ focused, color, size }) => {
               let iconName;
-
               if (route.name === 'Home') {
                 iconName = 'ios-home';
               } else if (route.name === 'Profile') {
@@ -122,7 +120,7 @@ export default class MainApp extends React.Component {
               else if (route.name === 'MyOrders') {
                 iconName = 'ios-clipboard';
               }
-              
+
               // You can return any component that you like here!
               return <Ionicons name={iconName} size={size} color={color} />;
             },
@@ -130,6 +128,7 @@ export default class MainApp extends React.Component {
           tabBarOptions={{
             activeTintColor: '#ffbf00',
             inactiveTintColor: 'gray',
+            
           }}
 
 

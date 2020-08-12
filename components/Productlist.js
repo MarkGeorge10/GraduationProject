@@ -1,21 +1,19 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-
+import {MaterialCommunityIcons} from '@expo/vector-icons';
 function Productlist(props) {
   return (
-    <View style={[styles.container, props.style]}>
-      <View style={styles.group2}>
-        <View style={styles.group}>
-          <Text style={styles.furniture}>Furniture</Text>
-          <Text style={styles.loremIpsum}>39122 items found</Text>
+    <View style={styles.containerlist}>
+      <View style={styles.group2list}>
+        <View style={styles.grouplist}>
+          <Text style={styles.furniturelist}>Electronics</Text>
+          <Text style={styles.loremIpsumlist}>39122 items found</Text>
         </View>
-        <View style={styles.groupFiller}></View>
+        <View style={styles.groupFillerlist}></View>
         <TouchableOpacity /* Conditional navigation not supported at the moment */
-          onPress={() => console.log("Navigate to Settings")}
-          style={styles.button1}
+          style={styles.button1list}
         >
-          <Icon name={props.icon2Name || "filter"} style={styles.icon1}></Icon>
+          <MaterialCommunityIcons name= "filter" style={styles.icon1list}></MaterialCommunityIcons>
         </TouchableOpacity>
       </View>
     </View>
@@ -23,47 +21,47 @@ function Productlist(props) {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  containerlist: {
     flexDirection: "row",
     justifyContent: "space-around"
   },
-  group2: {
+  group2list: {
     flexDirection: "row",
     flex: 1
   },
-  group: {
+  grouplist: {
     justifyContent: "center",
     height: 61,
     width: 314
   },
-  furniture: {
-    fontFamily: "alata-regular",
+  furniturelist: {
+    //fontFamily: "alata-regular",
     color: "#121212",
     fontSize: 32,
     height: 42,
     width: 314,
     marginLeft: 5
   },
-  loremIpsum: {
-    fontFamily: "roboto-regular",
+  loremIpsumlist: {
+    //fontFamily: "roboto-regular",
     color: "rgba(84,83,83,1)",
     fontSize: 10,
     height: 19,
     width: 314,
     marginLeft: 5
   },
-  groupFiller: {
+  groupFillerlist: {
     flex: 1,
     flexDirection: "row"
   },
-  button1: {
+  button1list: {
     flexDirection: "row",
     alignItems: "center",
     flexWrap: "wrap",
     justifyContent: "space-between",
     height: 61
   },
-  icon1: {
+  icon1list: {
     color: "rgba(33,51,61,1)",
     fontSize: 25,
     alignSelf: "center",

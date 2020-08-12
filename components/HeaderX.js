@@ -1,20 +1,50 @@
 import React, { Component } from "react";
 import { StyleSheet, View, TouchableOpacity, Image, Dimensions  } from "react-native";
-import FeatherIcon from "react-native-vector-icons/Feather";
+import {Ionicons,MaterialCommunityIcons} from '@expo/vector-icons';
 
 class  HeaderX extends Component{
+  
+  cartView() {
+
+    // if validation fails, value will be null
+    fetch('https://mosaic-test-api.herokuapp.com/users/'+'5f31095fb339cc001785e482'+'/cart', {
+      method: 'GET',
+    })
+      .then((response) => response.json())
+      .then((responseData) => {
+        console.log(responseData.error);
+        if (responseData.error != null) {
+            Alert.alert("No products yet in cart!")
+           
+
+        }  
+        else {
+          
+          var temp=Object.keys(responseData.cart.items)[1];
+        
+          currentcart=responseData;
+          total=currentcart.cart.totalPrice;
+          this.props.navigation.navigate('Cart')
+
+        }
+
+      }).catch(() => { Alert.alert("nonono")                  }  );
+
+
+  }
   render(){
   return (
     <View style={[styles.container,this.props.style]}>
       <View style={styles.group3}>
-        <TouchableOpacity /* Conditional navigation not supported at the moment */
-          onPress={() => console.log("side nav")}
-          style={styles.button1}
+      <TouchableOpacity /* Conditional navigation not supported at the moment */
+            onPress={() =>this.props.navigation.navigate('GettingStarted')}
+            style={styles.button1}
         >
-          <FeatherIcon
-            name={this.props.icon2Name || "menu"}
-            style={styles.icon3}
-          ></FeatherIcon>
+          <MaterialCommunityIcons
+                name={"logout"}
+                style={styles.icon3}
+                onPress={() => this.cartView()}
+            ></MaterialCommunityIcons>
         </TouchableOpacity>
         <View style={styles.button1Filler}>
           <Image
@@ -28,20 +58,13 @@ class  HeaderX extends Component{
             onPress={() =>this.props.navigation.navigate('Cart')}
             style={styles.button2}
           >
-            <FeatherIcon
-              name={this.props.icon2Name || "shopping-cart"}
-              style={styles.icon4}
-            ></FeatherIcon>
+            <Ionicons
+                name={"md-cart"}
+                style={styles.icon4}
+                onPress={() => this.cartView()}
+            ></Ionicons>
           </TouchableOpacity>
-          <TouchableOpacity /* Conditional navigation not supported at the moment */
-            onPress={() => console.log("Search")}
-            style={styles.button}
-          >
-            <FeatherIcon
-              name={this.props.icon2Name || "search"}
-              style={styles.icon2}
-            ></FeatherIcon>
-          </TouchableOpacity>
+           
         </View>
       </View>
     </View>

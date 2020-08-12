@@ -37,8 +37,7 @@ class LoginScreen extends Component {
         var password = this.state.password;
         let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         if (reg.test(email) === false) {
-            //this.props.navigate('MainApp')
-             Alert.alert("Email is incorrect");
+            Alert.alert("Email is incorrect");
         }
         else {
             if (email && password) {
@@ -64,34 +63,10 @@ class LoginScreen extends Component {
                             Alert.alert("Your Email or password is incorrect");
                         }
                         else {
-                            User=responseData.user_token;
-                            fetch('https://mosaic-test-api.herokuapp.com/products', {
-                                method: 'GET',
-                          
-                                
-                              })
-                                .then((response) => response.json())
-                                .then((responseData) => {
-                                  if (responseData.error != null) {
-                                    if (responseData.error.message == "no product exist") {
-                                      //  Alert.alert("No products yet in that category!")
-                                    }
-                          
-                                  }
-                                  else {
-                                    this.setState({ products: responseData });
-                                    featured = this.state.products;
-                                    ProdList=featured;
-
-                                    this.props.navigate('MainApp')
-                          
-                                  }
-                          
-                                }).catch(() => { Alert.alert("nonono")                  }  );
-                           // this.props.navigate('MainApp')
+                            this.props.navigate('MainApp')
                         }
 
-                    }).catch(() => {Alert.alert("noooo") });
+                    }).catch(() => { });
             }
         }
     }
@@ -187,11 +162,10 @@ const styles = StyleSheet.create({
 
     subcontainer: {
         width: sWidth,
-        alignSelf: "center",
         //height: sHeight,
 
         //   backgroundColor: '#f2eeee',
-        marginBottom: 20
+        marginBottom: 30
     },
     top_background: {
         width: sHeight * 2,

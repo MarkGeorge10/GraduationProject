@@ -49,7 +49,7 @@ const ratio   = sWidth / sHeight;
     subcontainer: {
         width: sWidth,
         //height: sHeight,
-        backgroundColor: '#fff',
+        backgroundColor: '#f2eeee',
         marginBottom:30
       },
       top_background: {
@@ -58,7 +58,7 @@ const ratio   = sWidth / sHeight;
         borderRadius: sHeight * 1,
         borderTopLeftRadius: 0,
         borderTopRightRadius: 0,
-        backgroundColor: '#003366',
+       // backgroundColor: '#f5f2f2',
         alignItems: 'center',
         marginLeft: ((ratio * sHeight) * 0.5) - (sHeight),
         marginTop: -sHeight * 1.7,
@@ -76,7 +76,7 @@ const ratio   = sWidth / sHeight;
         marginBottom: sHeight * 0.08,
         fontSize: 33,
         fontWeight: 'bold',
-        color: '#fff'
+        color: '#0e4a6c'
       },
 
   });

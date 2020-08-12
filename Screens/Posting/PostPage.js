@@ -24,6 +24,8 @@ class  PostScreen extends Component{
                   <Image
                       style={{ width: 140, height: 140,  borderRadius: 140 / 2,alignSelf:'center',margin:10, }}
                       source={require('../../img/shipping.png')} 
+                      resizeMode="contain"
+
                       />
                   <Text style={styles.button}>Add Shipment</Text>
                 </TouchableOpacity>
@@ -40,6 +42,9 @@ class  PostScreen extends Component{
                     <Image
                       style={{ width: 140, height: 140,  borderRadius: 140 / 2,alignSelf:'center',margin:10, }}
                       source={require('../../img/products.jpg')} 
+
+                      resizeMode="contain"
+
                       />
 
                     <Text style={styles.button}>Add product</Text>

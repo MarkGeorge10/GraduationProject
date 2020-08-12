@@ -14,7 +14,7 @@ const Logo =()=>{
         <View style={styles.container}>
             <Image
             source={require('../img/logo.png')}
-             style={{height:100,width:100}} />
+             style={{height:150,width:150}} />
         </View>
     );
 };

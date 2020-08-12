@@ -8,17 +8,20 @@ import { calcRatio, calcWidth, calcHeight } from '../Dimension';
 export default class CardView extends Component {
     constructor(props) {
         super(props);
-
+        total=currentcart.cart.totalPrice;
         this.state = {
-            count: 0,
+            count: this.props.quantity,
+            price: this.props.price,
+            initprice: this.props.price/this.props.quantity
         };
+      //  total=total+this.props.price;
 
     }
 
 
     render() {
         const { counter } = this.state;
-
+        var handleToUpdate  =   this.props.handler;
         return (
 
             <View style={styles.cart}>
@@ -26,7 +29,7 @@ export default class CardView extends Component {
                 <Image
                     style={{ width: calcWidth(70), height: calcHeight (80), alignItems: 'center', justifyContent: 'center', alignSelf: 'center', marginLeft: calcHeight (13), marginRight:(5)  }}
 
-                    source={this.props.image}
+                    source={{uri:this.props.image}}
 
                 />
 
@@ -36,16 +39,18 @@ export default class CardView extends Component {
 
                     <View style={styles.text2}>
                         <TouchableOpacity onPress={() => {
+                         
+                            if (this.state.count >1) {
 
-                            if (this.state.count <= 0) {
-                                this.state.count = 1;
-
-                            }
-
-
+                                
                             this.setState({
                                 count: this.state.count - 1,
+                                price: this.state.initprice*(this.state.count-1)
+
                             });
+                            total=total-this.state.initprice;}
+                            handleToUpdate();
+
                         }}>
 
                             <Text style={styles.Minus}>-</Text>
@@ -57,9 +62,15 @@ export default class CardView extends Component {
                         </Text>
 
                         <TouchableOpacity onPress={() => {
+                            this.props.handler
                             this.setState({
                                 count: this.state.count + 1,
+                                price: this.state.initprice*(this.state.count+1)
                             });
+
+                            total=total+this.state.initprice;
+                            handleToUpdate();
+
                         }}>
 
                             <Text style={styles.Add} >+</Text>
@@ -73,7 +84,7 @@ export default class CardView extends Component {
 
 
                 <View style={{ height:calcHeight  (80), width:calcWidth(55)  , justifyContent: 'flex-end', alignItems: 'flex-end' }}>
-                    <Text>{this.props.price}</Text>
+                    <Text>{this.state.price}$</Text>
 
                 </View>
 

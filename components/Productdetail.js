@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   loremIpsum: {
-    fontFamily: "roboto-regular",
+   // fontFamily: "roboto-regular",
     color: "rgba(0,0,0,1)",
     fontSize: 14,
     marginLeft: 16

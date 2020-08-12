@@ -9,6 +9,8 @@ import { calcRatio, calcWidth, calcHeight } from '../Dimension';
 
 
 class  MyOrders extends Component{
+  disableYellowBox = true;
+
 
    state = {
     data: [

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import {Ionicons} from '@expo/vector-icons';
 
 function MaterialButtonHamburger1(props) {
   return (
     <TouchableOpacity style={[styles.container, props.style]}>
-      <Icon name="plus" style={styles.icon}></Icon>
+      <Ionicons name="md-add" style={styles.icon}></Ionicons>
     </TouchableOpacity>
   );
 }

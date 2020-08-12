@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import Svg, { Ellipse } from "react-native-svg";
-import Icon from "react-native-vector-icons/Entypo";
-
-function CupertinoButtonDelete(props) {
+import {Ionicons} from '@expo/vector-icons';
+//function CupertinoButtonDelete(props) {
+  class  CupertinoButtonDelete extends Component{
+    render(){
   return (
-    <TouchableOpacity style={[styles.container, props.style]}>
+    <TouchableOpacity  style={[styles.container, this.props.style]} >
       <View style={styles.ellipseStack}>
         <Svg viewBox="0 0 23.88 23.88" style={styles.ellipse}>
           <Ellipse
@@ -18,11 +19,11 @@ function CupertinoButtonDelete(props) {
             ry={12}
           ></Ellipse>
         </Svg>
-        <Icon name="heart" style={styles.icon}></Icon>
+        <Ionicons name="md-heart" style={styles.icon}></Ionicons>
       </View>
     </TouchableOpacity>
   );
-}
+}}
 
 const styles = StyleSheet.create({
   container: {
