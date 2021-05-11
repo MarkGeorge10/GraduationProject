@@ -19,7 +19,7 @@
     "@react-navigation/native": "^5.4.2",
     "@react-navigation/stack": "^5.3.9",
     "expo": "^38.0.9",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "max-listeners-exceeded-warning": "0.0.1",
     "native-base": "^2.13.12",
     "prop-types": "^15.7.2",
